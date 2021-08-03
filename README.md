@@ -33,4 +33,14 @@ Usage:
    
    Section 2: Unit Tests
    ---------------------------------------
-   WIP
+
+NOTE: While comparisons and user input mocking are performed using the syntax of the unittest framework, actual testing and validation were performed using the pytest framework through a Windows command line. Because of this, results may vary if you choose to run the test file using the standard unittest framework, and I instead recommend using pytest instead.
+
+Installation/Usage:
+
+   1. Install pytest. Instructions to do so can be found here: https://docs.pytest.org/en/6.2.x/getting-started.html#getstarted
+
+   2. Using a command line tool (such as Command Prompt), locate and move to the directory containing the ticket viewer.
+   
+   3. Enter and run the following command: "pytest -s unittests.py"
+

@@ -1,0 +1,5 @@
+-----------------------------------------------------
+Ticket ID #1: "Sample ticket: Meet the ticket"
+Created on 2021-07-28 at 01:29:40 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/1.json
+-----------------------------------------------------

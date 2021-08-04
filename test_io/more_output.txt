@@ -1,0 +1,160 @@
+-----------------------------------------------------
+Ticket ID #1: "Sample ticket: Meet the ticket"
+Created on 2021-07-28 at 01:29:40 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/1.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #82: "velit eiusmod reprehenderit officia cupidatat"
+Created on 2021-08-01 at 20:24:08 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/82.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #83: "excepteur laborum ex occaecat Lorem"
+Created on 2021-08-01 at 20:24:09 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/83.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #84: "ad sunt qui aute ullamco"
+Created on 2021-08-01 at 20:24:09 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/84.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #85: "aliquip mollit quis laborum incididunt"
+Created on 2021-08-01 at 20:24:10 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/85.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #86: "nisi aliquip ipsum nostrud amet"
+Created on 2021-08-01 at 20:24:10 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/86.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #87: "cillum quis nostrud labore amet"
+Created on 2021-08-01 at 20:24:11 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/87.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #88: "proident est nisi non irure"
+Created on 2021-08-01 at 20:24:11 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/88.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #89: "veniam ea eu minim aute"
+Created on 2021-08-01 at 20:24:11 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/89.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #90: "magna reprehenderit nisi est cillum"
+Created on 2021-08-01 at 20:24:12 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/90.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #91: "quis veniam ad sunt non"
+Created on 2021-08-01 at 20:24:12 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/91.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #92: "tempor aliquip sint dolore incididunt"
+Created on 2021-08-01 at 20:24:13 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/92.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #93: "labore pariatur ut laboris laboris"
+Created on 2021-08-01 at 20:24:13 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/93.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #94: "officia mollit aliqua eu nostrud"
+Created on 2021-08-01 at 20:24:14 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/94.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #95: "do incididunt incididunt quis anim"
+Created on 2021-08-01 at 20:24:14 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/95.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #96: "tempor magna anim ea id"
+Created on 2021-08-01 at 20:24:15 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/96.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #97: "exercitation sit incididunt magna laboris"
+Created on 2021-08-01 at 20:24:15 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/97.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #98: "laborum ea ut in cupidatat"
+Created on 2021-08-01 at 20:24:16 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/98.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #99: "est fugiat labore pariatur esse"
+Created on 2021-08-01 at 20:24:16 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/99.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #100: "commodo sint laboris est et"
+Created on 2021-08-01 at 20:24:17 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/100.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #101: "laboris sint Lorem ex Lorem"
+Created on 2021-08-01 at 20:24:17 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/101.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #102: "esse adipisicing consectetur sunt tempor"
+Created on 2021-08-01 at 20:24:18 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/102.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #103: "sunt enim pariatur id id"
+Created on 2021-08-01 at 20:24:18 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/103.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #104: "et ad ut enim labore"
+Created on 2021-08-01 at 20:24:19 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/104.json
+-----------------------------------------------------
+
+-----------------------------------------------------
+Ticket ID #105: "voluptate dolor deserunt ea deserunt"
+Created on 2021-08-01 at 20:24:19 UTC
+URL: https://zccvt.zendesk.com/api/v2/tickets/105.json
+-----------------------------------------------------
+
+
+!~!~!-----------------------------------------------!~!~!
+The following actions can be performed:
+
+next (n)		Displays the next 25 tickets.
+quit (q)		Returns to the main menu.
+
+!~!~!-----------------------------------------------!~!~!
+
+

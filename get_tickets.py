@@ -1,7 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """
-***CURRENTLY WIP***
-This script, given the user's Zendesk login info, retrieves a list of all the tickets associated
-with the account and displays them in a nicely formatted manner within the command line.
+This script allows the user to view tickets in the 'zccvt.zendesk.com' domain, either as a specific
+ticket (given an ID#) or a list of all tickets currently housed within the domain.
 Author: Devin Toms
 Created: 2021/07/27
 Written for the Fall 2021 Zendesk Coding Challenge.
@@ -9,36 +11,19 @@ Written for the Fall 2021 Zendesk Coding Challenge.
 import requests
 import json
 
-user = input("Please enter an email address:") + "/token"
-token = input("Please enter an API token: ")
-
-
-"""
-Prints the given string into the terminal window such that no single line exceeds 100 characters
-in length. Includes newline and tab characters, and finishes with a newline character.
-"""
-def longStringPrinter(long_string: str):
-    # seperate string into "words"
-    words = long_string.split(" ")
-    line_builder = ""
-    for word in words:
-        # if line length limit hasn't been reached, simply append word to line
-        if (len(word) + len(line_builder) + 1 <= 100):
-            if (len(line_builder) != 0):
-                line_builder += " "
-            line_builder += word
-        # if line length limit has been reached, append word to next line 
-        else:
-            print(line_builder)
-            line_builder = ""
-            line_builder += word
-    # print leftover words 
-    print(line_builder)
-
+file = open("login.txt")
+user = file.readline()[:-1]
+token = file.readline()
+file.close()
+print(user)
+print(token)
         
 """
 Formats an individual ticket in an aesthetically pleaseing manner. For readability purposes when 
 viewing a large amount of tickets, only the ID, Subject, Creation time, and Ticket URL are shown.
+
+Precondition: The given ticket must include the following four keys: "id", "subject", 
+                                                                     "created_at", "url"
 """
 def formatTicket(ticket: dict):
     print("-----------------------------------------------------")
@@ -68,7 +53,7 @@ def listMultipage(all_tickets: dict):
             formatTicket(ticket)
             print()
 
-        # display user's current options
+        # display user's currently available options
         print()
         print("!~!~!-----------------------------------------------!~!~!")
         print("The following actions can be performed:") 
@@ -87,6 +72,7 @@ def listMultipage(all_tickets: dict):
         cmd = input("Please input your next action: ").lower()
         print()
 
+        # identify and execute user's command (if valid and legal)
         if (cmd == "quit" or cmd == "q"):
             break
         elif (cmd == "next" or cmd == "n"):
@@ -127,14 +113,15 @@ def listMultipage(all_tickets: dict):
 
 
 """
-***DOCUMENTATION WIP***
-"""
-def listTicketChunk(all_tickets: dict):
-    # show tickets on-screen in 25 ticket chunks
-    if (all_tickets["count"] < 1):
-        print("There are no tickets! Please add some and try again.")
+Lists all tickets associated with 'zccvt.zendesk.com'. In the case that >25 tickets would be
+displayed, tickets are instead split up into "pages" that the user can traverse through.
 
-    elif (all_tickets["count"] > 25):
+Precondition: all_tickets must contain a key "tickets" corresponding to a list[dict] of at least 
+              size 1 (which represents a successful API call).
+"""
+def listAllTickets(all_tickets: dict):
+
+    if (all_tickets["count"] > 25):
         listMultipage(all_tickets)
 
     else:
@@ -143,66 +130,69 @@ def listTicketChunk(all_tickets: dict):
             formatTicket(ticket)
             print()
 
-# "JSON response -> ticket value" format: dict -> list -> dict
-
-while(True):
-    print()
-    print("Welcome to the ticket viewer!")
-    print()
-    # display user's current options
-    print("!~!~!-----------------------------------------------!~!~!")
-    print("The following actions can be performed:") 
-    print()
-    print("1                        View a single ticket.")
-    print("2                        View a list of all tickets.")
-    print("quit (q)                 Exits the ticket viewer.")
-    print()
-    print("!~!~!-----------------------------------------------!~!~!")
-    print()
-
-    cmd = input("Please input your next action: ").lower()
-    print()
-
-    if (cmd == "quit" or cmd == "q"):
-        break
-    elif (cmd == "1"):
-        ticket = "https://zccvt.zendesk.com/api/v2/tickets/" + input("Please enter the ID of the ticket you would like to view: ") + ".json"
-        response = requests.get(ticket, auth=(user, token))
+def main():
+    while(True):
         print()
-        if (response.status_code == requests.codes.ok):
-            json_response = response.json()
-            formatTicket(json_response["ticket"])
+        print("Welcome to the ticket viewer!")
+        print()
+        # display user's current options
+        print("!~!~!-----------------------------------------------!~!~!")
+        print("The following actions can be performed:") 
+        print()
+        print("1                        View a single ticket.")
+        print("2                        View a list of all tickets.")
+        print("quit (q)                 Exits the ticket viewer.")
+        print()
+        print("!~!~!-----------------------------------------------!~!~!")
+        print()
+
+        cmd = input("Please input your next action: ").lower()
+        print()
+
+        if (cmd == "quit" or cmd == "q"):
+            break
+        elif (cmd == "1"):
+            ticket = "https://zccvt.zendesk.com/api/v2/tickets/" + input("Please enter the ID of the ticket you would like to view: ") + ".json"
+            response = requests.get(ticket, auth=(user, token))
             print()
-            input("Ticket found! When ready, press enter to return to the main menu.")
-        elif (response.status_code == 404):
-            print("!~!~!-----------------------------------------------------------!~!~!")
-            print()
-            print("The requested ticket could not be found. Please try again with a different ID.")
-            print()
-            print("!~!~!-----------------------------------------------------------!~!~!")
-            print()
-            input("Please press enter to return to the main menu.")
+            if (response.status_code == requests.codes.ok):
+                json_response = response.json()
+                # "JSON response -> ticket" format: dict -> list -> dict
+                formatTicket(json_response["ticket"])
+                print()
+                input("Ticket found! When ready, press enter to return to the main menu.")
+            elif (response.status_code == 404):
+                print("!~!~!-----------------------------------------------------------!~!~!")
+                print()
+                print("The requested ticket could not be found. Please try again with a different ID.")
+                print()
+                print("!~!~!-----------------------------------------------------------!~!~!")
+                print()
+                input("Please press enter to return to the main menu.")
+            else:
+                print("!~!~!-----------------------------------------------------------!~!~!")
+                print()
+                print("The ticket request was not successful. The HTTP status code is:", response.status_code)
+                print()
+                print("!~!~!-----------------------------------------------------------!~!~!")
+                print()
+                input("Please press enter to return to the main menu.")
+        elif (cmd == "2"):
+            # retrieve all tickets associated with the user's account
+            response = requests.get('https://zccvt.zendesk.com/api/v2/tickets.json', auth=(user, token))
+            if (response.status_code == requests.codes.ok):
+                json_response = response.json()
+                listAllTickets(json_response)
+            else:
+                print("!~!~!-----------------------------------------------------------!~!~!")
+                print()
+                print("The ticket request was not successful. The HTTP status code is:", response.status_code)
+                print()
+                print("!~!~!-----------------------------------------------------------!~!~!")
+                print()
+                input("Please press enter to return to the main menu.")
         else:
-            print("!~!~!-----------------------------------------------------------!~!~!")
-            print()
-            print("The ticket request was not successful. The HTTP status code is:", response.status_code)
-            print()
-            print("!~!~!-----------------------------------------------------------!~!~!")
-            print()
-            input("Please press enter to return to the main menu.")
-    elif (cmd == "2"):
-        # retrieve all tickets associated with the user's account
-        response = requests.get('https://zccvt.zendesk.com/api/v2/tickets.json', auth=(user, token))
-        if (response.status_code == requests.codes.ok):
-            json_response = response.json()
-            listTicketChunk(json_response)
-        else:
-            print("!~!~!-----------------------------------------------------------!~!~!")
-            print()
-            print("The ticket request was not successful. The HTTP status code is:", response.status_code)
-            print()
-            print("!~!~!-----------------------------------------------------------!~!~!")
-            print()
-            input("Please press enter to return to the main menu.")
-    else:
-        print("The command entered was not valid, please try again.")
+            print("The command entered was not valid, please try again.")
+
+if (__name__ == "__main__"):
+    main()

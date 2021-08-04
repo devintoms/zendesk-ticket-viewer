@@ -1,2 +1,4 @@
-tickets.json
 login.txt
+temp.py
+__pycache__/
+.pytest_cache/

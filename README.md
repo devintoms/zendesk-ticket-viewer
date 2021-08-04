@@ -15,10 +15,12 @@ Installation:
    3. Create a file named "login.txt" (no quotations). 
     
    4. Open "login.txt". On the first line, enter the email address you would like to use to access zccvt.zendesk.com from.
+ 
+   5. At the end of your email address, add the phrase "/token" (no quotations). Ex: "example@email.com/token"
     
-   5. On the second line, enter an API token for zccvt.zendesk.com. 
+   6. On the second line, enter an API token for zccvt.zendesk.com. 
     
-   6. Once entered, save and exit "login.txt". Installation is now complete.
+   7. Once entered, save and exit "login.txt". Installation is now complete.
     
 Usage:
     
